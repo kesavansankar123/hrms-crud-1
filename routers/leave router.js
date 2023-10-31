@@ -43,7 +43,7 @@ router.route('/datas/:name').get(async (req,res)=>{
     }
 });
 
-router.route('/update/:id').put(async (req,res)=>{
+router.route('/update/:id').patch(async (req,res)=>{
     try{
         var users= await loginUsers.findByIdAndUpdate(req.params.id,req.body,{new:true});
         res.json(users);
